@@ -18,7 +18,7 @@
 (:label membr :source-types set               :dest-type entity          :desc "member - set has member enttity")
 (:label obj   :source-types act               :dest-type entity          :desc "object - links an [ACT] to an [ENTITY], which is acted upon")
 (:label on    :source-types entity            :dest-type entity          :desc "on - links [ENTITY:*x] to [ENTITY:*y], where *x is on *y")
-(:label part  :source-types physical            :dest-type entity          :desc "part - object has part  entity")
+(:label part  :source-types physical          :dest-type entity          :desc "part - object has part  entity")
 (:label ploc  :source-types physical          :dest-type place           :desc "physical location - links an object to its place")
 (:label poss  :source-types animate           :dest-type entity          :desc "possession - indicating the animate object possesses the entity")
 (:label psize :source-types physical          :dest-type size            :desc "physical size - the number of members in a set or collection")
@@ -32,6 +32,5 @@
 (:label thme  :source-types situation         :dest-type entity          :desc "theme - associates some [ENTITY] with a [SITUATION]")
 (:label to    :source-types entity            :dest-type entity          :desc "to - provides an ordering between two concepts, indicates a terminating concept")
 (:label wgt   :source-types physical          :dest-type mass            :desc "weight - links [PHYSICAL] to [MASS], where mass is the weight of the physical object")
-
-
-(:label governs :source-types society          :dest-type place            :desc "governs")
+(:label governs :source-types society         :dest-type place           :desc "governs")
+(:label chrc  :source-types entity            :dest-type quality         :desc "characteristic")
