@@ -105,7 +105,7 @@
 (:label old :supertypes (age))
 (:label organization :supertypes (animate))
 (:label pay :supertypes (give) :canonical-graph
- "[PAY]- (agnt)→[ANIMATE] (rcpt)→[ANIMATE] (obj)→[CURRENCY] (exch)→[ENTITY] (manr)→[MANNER] (ptim)→[TIME-STAMP]")
+ "[PAY]- (agnt)→[ANIMATE] (rcpt)→[ANIMATE] (obj)→[CURRENCY] (exch)→[ENTITY] (manr)→[MANNER] (time)→[TIME-PERIOD]")
 (:label person :supertypes (animate))
 (:label physical :supertypes (entity))
 (:label physical-attribute :supertypes (attribute))
@@ -152,6 +152,20 @@
 (:label texture :supertypes (physical-attribute))
 (:label time-period :supertypes (abstract-object) :canonical-graph "[TIME-PERIOD]- (attr)→[START-TIME] (attr)→[END-TIME]")
 (:label time-stamp :supertypes (temporal-attribute))
+;; Day-of-week and deictic-day concepts (time-period subtypes). PARSIFAL time
+;; NPs surface as these lemmas ("Tuesday", "today", ...) and the extractor emits
+;; them as [PRED]-(time)->[<DAY>], so each needs a concept type. Modelled on the
+;; engine test-types' `monday'.
+(:label monday :supertypes (time-period))
+(:label tuesday :supertypes (time-period))
+(:label wednesday :supertypes (time-period))
+(:label thursday :supertypes (time-period))
+(:label friday :supertypes (time-period))
+(:label saturday :supertypes (time-period))
+(:label sunday :supertypes (time-period))
+(:label today :supertypes (time-period))
+(:label yesterday :supertypes (time-period))
+(:label tomorrow :supertypes (time-period))
 (:label transfer :supertypes (give) :canonical-graph "[TRANSFER]- (agnt)→[ANIMATE] (obj)→[PHYSICAL] (inst)→[PHYSICAL] (rcpt)→[ANIMATE]")
 (:label transport :supertypes (move))
 (:label used :supertypes (condition))
