@@ -41,6 +41,7 @@
 (:label condition :supertypes (physical-attribute))
 (:label container :supertypes (object))
 (:label currency :supertypes (inanimate))
+(:label money :supertypes (currency))
 (:label desire :supertypes (state) :canonical-graph "[DESIRE]→(expr)→[ANIMATE]")
 (:label difficulty :supertypes (evaluative-attribute))
 (:label dinner :supertypes (meal-food))
@@ -57,6 +58,12 @@
 (:label entity :supertypes (individual))
 (:label evaluative-attribute :supertypes (attribute))
 (:label event :supertypes (situation))
+;; A commercial exchange: one event decomposed into two reciprocal transfers
+;; (goods one way, payment the other), each a sub-event with its own time --
+;; Fillmore's commercial-transaction frame. `pay'/`buy'/`sell' profile it. The
+;; extractor promotes it from a `pay' clause (see cg-from-parse emit-exchange).
+(:label exchange :supertypes (event) :canonical-graph
+ "[EXCHANGE]- (has-part)→[GIVE]-(obj)→[ENTITY] (has-part)→[PAY]-(obj)→[MONEY]")
 (:label extent :supertypes (measure))
 (:label fast :supertypes (speed))
 (:label fat :supertypes (size))
