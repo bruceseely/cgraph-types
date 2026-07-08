@@ -68,6 +68,8 @@
 (:label fresh :supertypes (condition))
 (:label girl :supertypes (child) :canonical-graph "[GIRL]- (sex)→[FEMALE] (life-stage)→[CHILDHOOD]")
 (:label give :supertypes (act) :canonical-graph "[GIVE]- (agnt)→[ANIMATE] (obj)→[ENTITY] (rcpt)→[ANIMATE]")
+(:label gladly :supertypes (manner))
+(:label hamburger :supertypes (food-item food))
 (:label hard :supertypes (hardness))
 (:label hardness :supertypes (physical-attribute))
 (:label heap :supertypes (collection))
@@ -102,6 +104,8 @@
 (:label object-transfer :supertypes (give))
 (:label old :supertypes (age))
 (:label organization :supertypes (animate))
+(:label pay :supertypes (give) :canonical-graph
+ "[PAY]- (agnt)→[ANIMATE] (rcpt)→[ANIMATE] (obj)→[CURRENCY] (exch)→[ENTITY] (manr)→[MANNER] (ptim)→[TIME-STAMP]")
 (:label person :supertypes (animate))
 (:label physical :supertypes (entity))
 (:label physical-attribute :supertypes (attribute))
