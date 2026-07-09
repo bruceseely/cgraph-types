@@ -42,6 +42,7 @@
 (:label container :supertypes (object))
 (:label currency :supertypes (inanimate))
 (:label money :supertypes (currency))
+(:label dollar :supertypes (money))
 (:label desire :supertypes (state) :canonical-graph "[DESIRE]→(expr)→[ANIMATE]")
 (:label difficulty :supertypes (evaluative-attribute))
 (:label dinner :supertypes (meal-food))
@@ -131,7 +132,8 @@
 (:label rough :supertypes (texture))
 (:label see :supertypes (act) :canonical-graph "[SEE]- (agnt)→[ANIMATE] (obj)→[ENTITY] (inst)→[OBJECT]")
 ;;(:label see :supertypes (act) :canonical-graph "[SEE]- (agnt)→[ANIMATE] (obj)→[ENTITY]")
-(:label sell :supertypes (give) :canonical-graph "[SELL]- (agnt)→[ANIMATE] (obj)→[ENTITY] (inst)→[CURRENCY] (rcpt)→[ANIMATE]")
+(:label sell :supertypes (give) :canonical-graph "
+[SELL]- (agnt)→[ANIMATE] (obj)→[ENTITY] (inst)→[CURRENCY] (rcpt)→[ANIMATE]")
 (:label sequence :supertypes (collection))
 (:label set :supertypes (collection))
 (:label simple :supertypes (complexity))
