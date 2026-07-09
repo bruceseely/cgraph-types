@@ -59,12 +59,19 @@
 (:label entity :supertypes (individual))
 (:label evaluative-attribute :supertypes (attribute))
 (:label event :supertypes (situation))
-;; A commercial exchange: one event decomposed into two reciprocal transfers
-;; (goods one way, payment the other), each a sub-event with its own time --
-;; Fillmore's commercial-transaction frame. `pay'/`buy'/`sell' profile it. The
-;; extractor promotes it from a `pay' clause (see cg-from-parse emit-exchange).
+;; An exchange: one event in which two parties each transfer something to the
+;; other -- two reciprocal GIVE sub-events, where the giver/recipient of one are
+;; the recipient/giver of the other. The GENERAL case (e.g. barter); the
+;; commercial case is the subtype below.
 (:label exchange :supertypes (event) :canonical-graph
- "[EXCHANGE]- (has-part)→[GIVE]-(obj)→[ENTITY] (has-part)→[PAY]-(obj)→[MONEY]")
+ "[EXCHANGE]- (has-part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y], (has-part)→[GIVE]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x]")
+;; A commercial exchange: an exchange in which ONE transfer is specialized to a
+;; PAY (money) -- the seller (*x) GIVEs the goods to the buyer (*y), who PAYs
+;; money back (pay is a subtype of give). Fillmore's commercial-transaction frame;
+;; `pay'/`buy'/`sell' are three perspectives on it, all promoted to this type by
+;; the extractor (see cg-from-parse emit-exchange).
+(:label commercial-exchange :supertypes (exchange) :canonical-graph
+ "[COMMERCIAL-EXCHANGE]- (has-part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y] (obj)→[ENTITY], (has-part)→[PAY]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x] (obj)→[MONEY]")
 (:label extent :supertypes (measure))
 (:label fast :supertypes (speed))
 (:label fat :supertypes (size))
@@ -132,8 +139,14 @@
 (:label rough :supertypes (texture))
 (:label see :supertypes (act) :canonical-graph "[SEE]- (agnt)→[ANIMATE] (obj)→[ENTITY] (inst)→[OBJECT]")
 ;;(:label see :supertypes (act) :canonical-graph "[SEE]- (agnt)→[ANIMATE] (obj)→[ENTITY]")
-(:label sell :supertypes (give) :canonical-graph "
-[SELL]- (agnt)→[ANIMATE] (obj)→[ENTITY] (inst)→[CURRENCY] (rcpt)→[ANIMATE]")
+;; `buy'/`sell' name the WHOLE commercial exchange (two reciprocal transfers),
+;; from the buyer's / seller's perspective -- NOT a one-way give. Contrast `pay'
+;; (above), which IS a one-way give (of money) and is what the exchange has as its
+;; money sub-event. The extractor normalizes all three verbs to
+;; [COMMERCIAL-EXCHANGE], so buy/sell are lexical documentation (not emitted);
+;; [PAY]/[GIVE] are the emitted parts.
+(:label buy  :supertypes (commercial-exchange))
+(:label sell :supertypes (commercial-exchange))
 (:label sequence :supertypes (collection))
 (:label set :supertypes (collection))
 (:label simple :supertypes (complexity))
