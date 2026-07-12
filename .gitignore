@@ -1,0 +1,5 @@
+# Reference type definitions captured from Sowa's book -- set aside because they
+# weren't internally consistent, but kept locally for mining interesting bits
+# into the active catalog. Local-only; not part of the ontology.
+old-concept-types.lisp
+old-relation-types.lisp
