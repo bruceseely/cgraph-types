@@ -59,19 +59,8 @@
 (:label entity :supertypes (individual))
 (:label evaluative-attribute :supertypes (attribute))
 (:label event :supertypes (situation))
-;; An exchange: one event in which two parties each transfer something to the
-;; other -- two reciprocal GIVE sub-events, where the giver/recipient of one are
-;; the recipient/giver of the other. The GENERAL case (e.g. barter); the
-;; commercial case is the subtype below.
-(:label exchange :supertypes (event) :canonical-graph
- "[EXCHANGE]- (has-part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y], (has-part)→[GIVE]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x]")
-;; A commercial exchange: an exchange in which ONE transfer is specialized to a
-;; PAY (money) -- the seller (*x) GIVEs the goods to the buyer (*y), who PAYs
-;; money back (pay is a subtype of give). Fillmore's commercial-transaction frame;
-;; `pay'/`buy'/`sell' are three perspectives on it, all promoted to this type by
-;; the extractor (see cg-from-parse emit-exchange).
-(:label commercial-exchange :supertypes (exchange) :canonical-graph
- "[COMMERCIAL-EXCHANGE]- (has-part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y] (obj)→[ENTITY], (has-part)→[PAY]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x] (obj)→[MONEY]")
+(:label exchange :supertypes (event) :canonical-graph "[EXCHANGE]- (has-part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y], (has-part)→[GIVE]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x]" :note "One event where two parties each transfer something to the other -- two reciprocal GIVE sub-events (giver/recipient of one are recipient/giver of the other). The GENERAL case (e.g. barter); the commercial case is COMMERCIAL-EXCHANGE.")
+(:label commercial-exchange :supertypes (exchange) :canonical-graph "[COMMERCIAL-EXCHANGE]- (has-part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y] (obj)→[ENTITY], (has-part)→[PAY]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x] (obj)→[MONEY]" :note "An exchange where ONE transfer is specialized to a PAY (money): the seller (*x) GIVEs goods to the buyer (*y), who PAYs money back (pay is a subtype of give). Fillmore's commercial-transaction frame; `pay'/`buy'/`sell' are three perspectives on it, all promoted here by the extractor (cg-from-parse emit-exchange).")
 (:label extent :supertypes (measure))
 (:label fast :supertypes (speed))
 (:label fat :supertypes (size))
@@ -118,8 +107,7 @@
 (:label object :supertypes (inanimate))
 (:label old :supertypes (age))
 (:label organization :supertypes (animate))
-(:label pay :supertypes (transfer) :canonical-graph
- "[PAY]- (agnt)→[ANIMATE] (rcpt)→[ANIMATE] (obj)→[CURRENCY] (exch)→[ENTITY] (manr)→[MANNER] (time)→[TIME-PERIOD]")
+(:label pay :supertypes (transfer) :canonical-graph "[PAY]- (agnt)→[ANIMATE] (rcpt)→[ANIMATE] (obj)→[CURRENCY] (exch)→[ENTITY] (manr)→[MANNER] (time)→[TIME-PERIOD]")
 (:label person :supertypes (animate))
 (:label physical :supertypes (entity))
 (:label physical-attribute :supertypes (attribute))
@@ -137,16 +125,9 @@
 (:label ripe :supertypes (condition))
 (:label rock :supertypes (object))
 (:label rough :supertypes (texture))
-(:label see :supertypes (act) :canonical-graph "[SEE]- (agnt)→[ANIMATE] (obj)→[ENTITY] (inst)→[OBJECT]")
-;;(:label see :supertypes (act) :canonical-graph "[SEE]- (agnt)→[ANIMATE] (obj)→[ENTITY]")
-;; `buy'/`sell' name the WHOLE commercial exchange (two reciprocal transfers),
-;; from the buyer's / seller's perspective -- NOT a one-way give. Contrast `pay'
-;; (above), which IS a one-way give (of money) and is what the exchange has as its
-;; money sub-event. The extractor normalizes all three verbs to
-;; [COMMERCIAL-EXCHANGE], so buy/sell are lexical documentation (not emitted);
-;; [PAY]/[GIVE] are the emitted parts.
-(:label buy  :supertypes (commercial-exchange))
-(:label sell :supertypes (commercial-exchange))
+(:label see :supertypes (act) :canonical-graph "[SEE]- (agnt)→[ANIMATE] (obj)→[ENTITY] (inst)→[OBJECT]" :note "variant without an instrument: [SEE]-(agnt)→[ANIMATE] (obj)→[ENTITY]")
+(:label buy  :supertypes (commercial-exchange) :note "Buyer's-perspective name for the WHOLE commercial exchange (two reciprocal transfers), NOT a one-way give. Cf. `pay', which IS a one-way give of money = the exchange's money sub-event. The extractor normalizes buy/sell/pay to [COMMERCIAL-EXCHANGE], so buy/sell are lexical documentation (not emitted); [PAY]/[GIVE] are the emitted parts.")
+(:label sell :supertypes (commercial-exchange) :note "Seller's-perspective name for the whole commercial exchange; see `buy'.")
 (:label sequence :supertypes (collection))
 (:label set :supertypes (collection))
 (:label simple :supertypes (complexity))
@@ -174,20 +155,16 @@
 (:label texture :supertypes (physical-attribute))
 (:label time-period :supertypes (abstract-object) :canonical-graph "[TIME-PERIOD]- (attr)→[START-TIME] (attr)→[END-TIME]")
 (:label time-stamp :supertypes (temporal-attribute))
-;; Day-of-week and deictic-day concepts (time-period subtypes). PARSIFAL time
-;; NPs surface as these lemmas ("Tuesday", "today", ...) and the extractor emits
-;; them as [PRED]-(time)->[<DAY>], so each needs a concept type. Modelled on the
-;; engine test-types' `monday'.
-(:label monday :supertypes (time-period))
-(:label tuesday :supertypes (time-period))
-(:label wednesday :supertypes (time-period))
-(:label thursday :supertypes (time-period))
-(:label friday :supertypes (time-period))
-(:label saturday :supertypes (time-period))
-(:label sunday :supertypes (time-period))
-(:label today :supertypes (time-period))
-(:label yesterday :supertypes (time-period))
-(:label tomorrow :supertypes (time-period))
+(:label monday :supertypes (time-period) :note "day-of-week; PARSIFAL time lemma, emitted as (time)->[MONDAY].")
+(:label tuesday :supertypes (time-period) :note "day-of-week; PARSIFAL time lemma, emitted as (time)->[TUESDAY].")
+(:label wednesday :supertypes (time-period) :note "day-of-week; PARSIFAL time lemma, emitted as (time)->[WEDNESDAY].")
+(:label thursday :supertypes (time-period) :note "day-of-week; PARSIFAL time lemma, emitted as (time)->[THURSDAY].")
+(:label friday :supertypes (time-period) :note "day-of-week; PARSIFAL time lemma, emitted as (time)->[FRIDAY].")
+(:label saturday :supertypes (time-period) :note "day-of-week; PARSIFAL time lemma, emitted as (time)->[SATURDAY].")
+(:label sunday :supertypes (time-period) :note "day-of-week; PARSIFAL time lemma, emitted as (time)->[SUNDAY].")
+(:label today :supertypes (time-period) :note "deictic day; PARSIFAL time lemma, emitted as (time)->[TODAY].")
+(:label yesterday :supertypes (time-period) :note "deictic day; PARSIFAL time lemma, emitted as (time)->[YESTERDAY].")
+(:label tomorrow :supertypes (time-period) :note "deictic day; PARSIFAL time lemma, emitted as (time)->[TOMORROW].")
 (:label transfer :supertypes (give) :canonical-graph "[TRANSFER]- (agnt)→[ANIMATE] (obj)→[PHYSICAL] (rcpt)→[ANIMATE]")
 (:label transport :supertypes (relocation) :canonical-graph "[TRANSPORT]- (agnt)→[ANIMATE] (obj)→[PHYSICAL] (inst)→[PHYSICAL] (dest)→[PLACE]")
 (:label used :supertypes (condition))
