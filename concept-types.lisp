@@ -59,7 +59,17 @@
 (:label entity :supertypes (individual))
 (:label evaluative-attribute :supertypes (attribute))
 (:label event :supertypes (situation))
-(:label exchange :supertypes (event) :canonical-graph "[EXCHANGE]- (has-part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y], (has-part)→[GIVE]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x]" :note "One event where two parties each transfer something to the other -- two reciprocal GIVE sub-events (giver/recipient of one are recipient/giver of the other). The GENERAL case (e.g. barter); the commercial case is COMMERCIAL-EXCHANGE.")
+(:label exchange :supertypes (event) :canonical-graph
+        "[EXCHANGE]-
+              (has-part)→[GIVE]-
+                           (agnt)→[ANIMATE: *x]
+                           (rcpt)→[ANIMATE: *y],
+              (has-part)→[GIVE]-
+                           (agnt)→[ANIMATE: *y]
+                           (rcpt)→[ANIMATE: *x]"
+ :note
+        "One event where two parties each transfer something to the other
+           -- two reciprocal GIVE sub-events (giver/recipient of one are recipient/giver of the other). The GENERAL case (e.g. barter); the commercial case is COMMERCIAL-EXCHANGE.")
 (:label extent :supertypes (measure))
 (:label fast :supertypes (speed))
 (:label fat :supertypes (size))
@@ -124,6 +134,7 @@
 (:label quietly :supertypes (manner))
 (:label raw :supertypes (condition))
 (:label relocation :supertypes (move) :canonical-graph "[RELOCATION]- (agnt)→[ANIMATE] (obj)→[PHYSICAL] (dest)→[PLACE]")
+(:label request :supertypes (communicate) :canonical-graph "[REQUEST]- (agnt)→[ANIMATE] (obj)→[ENTITY] (rcpt)→[ANIMATE]." :note "A directive communicative act: agent asks recipient for some entity. obj is kept general at ENTITY so it covers a requested thing (an appointment, a vacation) or a requested action packaged as a [PROPOSITION: ...].")
 (:label ripe :supertypes (condition))
 (:label rock :supertypes (object))
 (:label rough :supertypes (texture))
@@ -152,7 +163,6 @@
 (:label telephone :supertypes (object))
 (:label temperature :supertypes (measure))
 (:label temporal-attribute :supertypes (attribute))
-(:label temporal-attribute :supertypes (attribute))
 (:label temporal-extent :supertypes (extent))
 (:label tesla-vehicle :supertypes (automobile))
 (:label texture :supertypes (physical-attribute))
@@ -172,3 +182,37 @@
 (:label woman :supertypes (adult) :canonical-graph "[WOMAN]- (sex)→[FEMALE] (life-stage)→[ADULTHOOD]")
 (:label yesterday :supertypes (time-period) :note "deictic day; PARSIFAL time lemma, emitted as (time)->[YESTERDAY].")
 (:label young :supertypes (age))
+(:label water :supertypes (substance))
+(:label coffee :supertypes (food))
+(:label tea :supertypes (food))
+(:label juice :supertypes (food))
+(:label beer :supertypes (food))
+(:label wine :supertypes (food))
+(:label bread :supertypes (food))
+(:label rice :supertypes (food))
+(:label knowledge :supertypes (information))
+(:label fuel :supertypes (substance))
+(:label gas :supertypes (fuel))
+(:label oil :supertypes (fuel))
+(:label air :supertypes (substance))
+(:label teach :supertypes (inform))
+(:label warn :supertypes (inform))
+(:label remind :supertypes (inform))
+(:label advise :supertypes (inform))
+(:label tell :supertypes (inform))
+(:label salt :supertypes (food))
+(:label sugar :supertypes (food))
+(:label butter :supertypes (food))
+(:label cheese :supertypes (food))
+(:label meat :supertypes (food))
+(:label soup :supertypes (food))
+(:label gold :supertypes (substance))
+(:label silver :supertypes (substance))
+(:label advice :supertypes (information))
+(:label evidence :supertypes (information))
+(:label music :supertypes (abstract-object))
+(:label software :supertypes (abstract-object))
+(:label furniture :supertypes (object))
+(:label equipment :supertypes (object))
+(:label luggage :supertypes (object))
+(:label clothing :supertypes (object))
