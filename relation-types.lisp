@@ -12,7 +12,7 @@
 (:label from  :source-types entity            :dest-type entity          :desc "from - provides an ordering between two concepts, indicates an initial concept")
 (:label goal  :source-types state             :dest-type situation       :desc "goal - the situation a mental state is directed toward")
 (:label governs :source-types society         :dest-type place           :desc "governs")
-(:label has-part  :source-types individual    :dest-type individual      :desc "life stage")
+(:label has-part  :source-types individual    :dest-type individual      :desc "has-part")
 (:label hgt   :source-types physical          :dest-type distance        :desc "height - links [PHYSICAL] to [DISTANCE], where distance is the height of the physical object")
 (:label inst  :source-types event             :dest-type entity          :desc "instrument - links [ENTITY] to [EVENT], where entity is causally involved in the act")
 (:label life-stage  :source-types person      :dest-type life-stage      :desc "life stage")
