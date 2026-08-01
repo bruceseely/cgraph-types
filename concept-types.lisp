@@ -24,7 +24,7 @@
 (:label box :supertypes (container))
 (:label boy :supertypes (child) :canonical-graph "[BOY]- (sex)→[MALE] (life-stage)→[CHILDHOOD]")
 (:label breakfast :supertypes (meal-food))
-(:label breakfast-event :supertypes (meal) :canonical-graph "[BREAKFAST-EVENT]→(has-part)→[EAT]- (agnt)→[PERSON] (obj)→[breakfast]")
+(:label breakfast-event :supertypes (meal) :canonical-graph "[BREAKFAST-EVENT]→(part)→[EAT]- (agnt)→[PERSON] (obj)→[breakfast]")
 (:label buy  :supertypes (commercial-exchange) :note "Buyer's-perspective name for the WHOLE commercial exchange (two reciprocal transfers), NOT a one-way give. Cf. `pay', which IS a one-way give of money = the exchange's money sub-event. The extractor normalizes buy/sell/pay to [COMMERCIAL-EXCHANGE], so buy/sell are lexical documentation (not emitted); [PAY]/[GIVE] are the emitted parts.")
 (:label cake :supertypes (food))
 (:label carefully :supertypes (manner))
@@ -36,7 +36,7 @@
 (:label city :supertypes (place))
 (:label city-government :supertypes (society)  :canonical-graph "[CITY-GOVERNMENT]←(agnt)←[GOVERN]→(ptnt)→[CITY]")
 (:label collection :supertypes (abstract-object))
-(:label commercial-exchange :supertypes (exchange) :canonical-graph "[COMMERCIAL-EXCHANGE]- (has-part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y] (obj)→[ENTITY], (has-part)→[PAY]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x] (obj)→[MONEY]" :note "An exchange where ONE transfer is specialized to a PAY (money): the seller (*x) GIVEs goods to the buyer (*y), who PAYs money back (pay is a subtype of give). Fillmore's commercial-transaction frame; `pay'/`buy'/`sell' are three perspectives on it, all promoted here by the extractor (cg-from-parse emit-exchange).")
+(:label commercial-exchange :supertypes (exchange) :canonical-graph "[COMMERCIAL-EXCHANGE]- (part)→[GIVE]-(agnt)→[ANIMATE: *x] (rcpt)→[ANIMATE: *y] (obj)→[ENTITY], (part)→[PAY]-(agnt)→[ANIMATE: *y] (rcpt)→[ANIMATE: *x] (obj)→[MONEY]" :note "An exchange where ONE transfer is specialized to a PAY (money): the seller (*x) GIVEs goods to the buyer (*y), who PAYs money back (pay is a subtype of give). Fillmore's commercial-transaction frame; `pay'/`buy'/`sell' are three perspectives on it, all promoted here by the extractor (cg-from-parse emit-exchange).")
 (:label communicate :supertypes (give))
 (:label complexity :supertypes (evaluative-attribute))
 (:label condition :supertypes (physical-attribute))
@@ -45,7 +45,7 @@
 (:label desire :supertypes (state) :canonical-graph "[DESIRE]→(expr)→[ANIMATE]")
 (:label difficulty :supertypes (evaluative-attribute))
 (:label dinner :supertypes (meal-food))
-(:label dinner-event :supertypes (meal) :canonical-graph "[DINNER-EVENT]- (has-part)→[EAT]-(agnt)→[PERSON: *x] (obj)→[dinner], (has-part)→[ATTEND]→(agnt)→[PERSON: *x]")
+(:label dinner-event :supertypes (meal) :canonical-graph "[DINNER-EVENT]- (part)→[EAT]-(agnt)→[PERSON: *x] (obj)→[dinner], (part)→[ATTEND]→(agnt)→[PERSON: *x]")
 (:label distance :supertypes (length) :canonical-graph "[DISTANCE]- (from)←[ENTITY] (to)←[ENTITY]")
 (:label dog :supertypes (animal))
 (:label dollar :supertypes (money))
@@ -61,10 +61,10 @@
 (:label event :supertypes (situation))
 (:label exchange :supertypes (event) :canonical-graph
         "[EXCHANGE]-
-              (has-part)→[GIVE]-
+              (part)→[GIVE]-
                            (agnt)→[ANIMATE: *x]
                            (rcpt)→[ANIMATE: *y],
-              (has-part)→[GIVE]-
+              (part)→[GIVE]-
                            (agnt)→[ANIMATE: *y]
                            (rcpt)→[ANIMATE: *x]"
  :note
@@ -99,7 +99,7 @@
 (:label linear-extent :supertypes (spatial-extent))
 (:label list :supertypes (collection))
 (:label lunch :supertypes (meal-food))
-(:label lunch-event :supertypes (meal) :canonical-graph "[LUNCH-EVENT]]→(has-part)→[EAT]- (agnt)→[PERSON] (obj)→[LUNCH]")
+(:label lunch-event :supertypes (meal) :canonical-graph "[LUNCH-EVENT]]→(part)→[EAT]- (agnt)→[PERSON] (obj)→[LUNCH]")
 (:label male :supertypes (attribute))
 (:label man :supertypes (adult) :canonical-graph "[MAN]- (sex)→[MALE] (life-stage)→[ADULTHOOD]")
 (:label manner :supertypes (attribute characteristic))
