@@ -226,3 +226,5 @@
 (:label notify :supertypes (inform))
 (:label ask :supertypes (communicate))
 (:label show :supertypes (inform))
+(:label geological-landform :supertypes (place))
+(:label hand :supertypes (body-part))
