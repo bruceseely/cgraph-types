@@ -105,7 +105,7 @@
 (:label hope :supertypes (state) :canonical-graph "[HOPE]→(expr)→[ANIMATE]")
 (:label inanimate :supertypes (physical))
 (:label individual :supertypes (⊤))
-(:label inform :supertypes (communicate) :canonical-graph "[INFORM]- (agnt)→[ANIMATE] (inst)→[ENTITY] (rcpt)→[ANIMATE] (obj)→[INFORMATION].")
+(:label inform :supertypes (communicate) :canonical-graph "[INFORM]- (agnt)→[ANIMATE] (inst)→[ENTITY] (rcpt)→[ANIMATE] (obj)→[INFORMATION] (thme)→[ENTITY]." :note "OBJ and THME are different roles and each keeps one meaning. INFORM is a kind of GIVE, so OBJ is inherited from GIVE's frame and means WHAT IS GIVEN -- here, the information transferred; [INFORMATION] is a restriction of GIVE's (obj)→[ENTITY]. THME is what that information is ABOUT. So \"Bruce informed Sue about a dog\" is (thme)→[DOG], not (obj)→[DOG]: the dog is the topic, and turning the topic into information about it is what informing DOES rather than a role it takes. THME is at [ENTITY], its signature ceiling, so it constrains nothing and is here to declare the role.")
 (:label information :supertypes (abstract-object))
 (:label ingest :supertypes (act) :canonical-graph "[INGEST]-(agnt)→[ANIMATE](obj)→[SUBSTANCE](dest)→[BODY-PART]")
 (:label intention :supertypes (state) :canonical-graph "[INTENTION]- (expr)→[ANIMATE] (goal)→[SITUATION]")
