@@ -32,7 +32,7 @@
 (:label size  :source-types collection        :dest-type number          :desc "size - the number of members in a collection")
 (:label stat  :source-types state             :dest-type proposition     :desc "statement/content - links [ENTITY] with a [SITUATION]")
 (:label temp  :source-types physical          :dest-type temperature     :desc "temperature - links [PHYSICAL] to [TEMPERATURE], where temperature is the temperature of the physical object")
-(:label thme  :source-types situation         :dest-type entity          :desc "theme - associates some [ENTITY] with a [SITUATION]")
+(:label thme  :source-types situation         :dest-type individual      :desc "theme - associates some [INDIVIDUAL] with a [SITUATION]: what the situation is about. Reaches INDIVIDUAL rather than ENTITY so the theme may itself be a situation -- you can wish to eat and inform about a meeting, not merely wish for a pie. An event theme is best written as a nested graph ([SITUATION: [...]]), which the realizer turns into an infinitive; a bare act concept is legal but realizes as a noun phrase.")
 (:label time  :source-types situation         :dest-type time-period     :desc "time - links a [SITUATION] to the [TIME-PERIOD] at which it occurs (e.g. \"...pay you Tuesday\", \"gave the book yesterday\"). The temporal analogue of loc; fills PARSIFAL's TIME case (via a during-PP) and its temporal PP-adjuncts (\"on monday\").")
 (:label to    :source-types entity            :dest-type entity          :desc "to - provides an ordering between two concepts, indicates a terminating concept")
 (:label wgt   :source-types physical          :dest-type mass            :desc "weight - links [PHYSICAL] to [MASS], where mass is the weight of the physical object")
