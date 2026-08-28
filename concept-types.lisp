@@ -62,7 +62,7 @@
 (:label dog :supertypes (animal))
 (:label dollar :supertypes (money))
 (:label drink :supertypes (ingest))
-(:label drive :supertypes (transport))
+(:label drive :supertypes (transport) :canonical-graph "[DRIVE]- (agnt)→[PERSON] (dest)→[PLACE] (inst)→[VEHICLE] (obj)→[PERSON].")
 (:label duration :supertypes (temporal-extent) :canonical-graph "[DURATION]←(attr)←[SITUATION]")
 (:label easy :supertypes (difficulty))
 (:label eat :supertypes (ingest))
