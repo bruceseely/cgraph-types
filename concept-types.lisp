@@ -132,7 +132,7 @@
 (:label milk :supertypes (food))
 (:label monday :supertypes (time-period) :note "day-of-week; PARSIFAL time lemma, emitted as (time)->[MONDAY].")
 (:label money :supertypes (currency))
-(:label move :supertypes (act))
+(:label move :supertypes (act) :canonical-graph "[MOVE]- (agnt)→[ANIMATE] (obj)→[PHYSICAL]")
 (:label music :supertypes (abstract-object))
 (:label new :supertypes (age))
 (:label news :supertypes (information))
