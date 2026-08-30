@@ -149,6 +149,7 @@
 (:label organization :supertypes (animate))
 (:label pay :supertypes (transfer) :canonical-graph "[PAY]- (agnt)→[ANIMATE] (rcpt)→[ANIMATE] (obj)→[CURRENCY] (exch)→[ENTITY] (manr)→[MANNER] (time)→[TIME-PERIOD]")
 (:label person :supertypes (animate))
+(:label phone-call :supertypes (communicate) :canonical-graph "[PHONE-CALL]- (agnt)→[ANIMATE] (obj)→[ENTITY] (rcpt)→[ANIMATE] (inst)→[TELEPHONY]" :note "A communicative act whose medium is TELEPHONY -- the (inst) restriction is the whole of what distinguishes it, so OBJ stays at GIVE's [ENTITY] rather than narrowing to [INFORMATION]: a call may inform, request, or merely chat. This is the telephone layer's answer to EMAIL-MESSAGE and LETTER: the medium leaves an EVENT behind, not an artifact you keep. Limitation: as a GIVE it names a caller (agnt) and a callee (rcpt), which records who placed the call but not that both parties talk -- the reciprocal reading would be an EXCHANGE of two communications, as COMMERCIAL-EXCHANGE is to PAY.")
 (:label physical :supertypes (entity))
 (:label physical-attribute :supertypes (attribute))
 (:label pick-up :supertypes (act))
