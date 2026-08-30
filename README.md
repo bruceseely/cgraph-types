@@ -7,7 +7,7 @@ Two files, each a plain list of S-expression definitions:
 
 - **`concept-types.lisp`** — 174 concept types (the `[BRACKET]` node types), each
   `(:label … :supertypes (…) [:canonical-graph "…"])`. Verbs are concepts (e.g.
-  `give`, `pay`, `see`, `relocation`); the lattice runs
+  `give`, `pay`, `see`, `relocate`); the lattice runs
   `individual ⊃ {entity, situation} ⊃ …`.
 - **`relation-types.lisp`** — 37 relation types (the `(paren)` arc types, e.g.
   `agnt`, `obj`, `rcpt`, `time`), each with `:source-types` / `:dest-type`
