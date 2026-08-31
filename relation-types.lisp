@@ -15,7 +15,7 @@
 (:label hgt   :source-types physical          :dest-type distance        :desc "height - links [PHYSICAL] to [DISTANCE], where distance is the height of the physical object")
 (:label inst  :source-types event             :dest-type entity          :desc "instrument - links [ENTITY] to [EVENT], where entity is causally involved in the act")
 (:label life-stage  :source-types person      :dest-type life-stage      :desc "life stage")
-(:label loc   :source-types entity            :dest-type place           :desc "location - links anything to its place")
+(:label loc   :source-types individual        :dest-type place           :desc "location - links anything to its place" :note "INDIVIDUAL, not ENTITY, so a SITUATION can have one: a party is in a library, a meeting is in a room. DUR and TIME are already situation-sourced, so entity-only made location the one circumstance an event could not have -- and this desc claimed otherwise from the start. PLOC stays the narrower physical case underneath.")
 (:label manr  :source-types act               :dest-type manner          :desc "manner - links an [ACT] to an [ATTRIBUTE] of the act")
 (:label membr :source-types set               :dest-type entity          :desc "member - set has member enttity")
 (:label obj   :source-types act               :dest-type entity          :desc "object - links an [ACT] to an [ENTITY], which is acted upon")
