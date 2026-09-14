@@ -1,0 +1,37 @@
+;;; -*- mode: lisp; base: 10; syntax: common-lisp; -*-
+;;; lexicon.dict -- parser vocabulary for THIS domain.
+;;;
+;;; Loaded automatically alongside concept-types.lisp and relation-types.lisp
+;;; when the domain is mounted (cg-from-parse `ensure-domain-lexicon'). Read in
+;;; the :parsifal package with Marcus's dictionary and supplement.dict already
+;;; in place, so `jlike' targets from either resolve.
+;;;
+;;; Every content word here wants a same-named concept type in
+;;; concept-types.lisp -- they are paired by NAME. `cfp:validate-lexicon'
+;;; reports the ones that are not.
+;;;
+;;;   `jlike NEW OLD'  clone OLD's features/markers/case frame -- the cheapest
+;;;                    entry, right for an ordinary noun.
+;;;   `df'             define from scratch; needed for anything with a case
+;;;                    frame (a verb) or its own feature set (a proper noun).
+
+;; --- verbs ---
+;; NOTE: this domain's concept-types.lisp gives DRIVE the canonical graph
+;;   [DRIVE]- (agnt)→[PERSON] (dest)→[PLACE] (inst)→[VEHICLE] (obj)→[PERSON]
+;; i.e. the vehicle is the INSTRUMENT and `obj' is a person being driven. The
+;; frame below is the simpler transitive reading -- the automobile fills `neut'
+;; and extracts as (obj) -- because Marcus's `ins' case is not yet mapped to
+;; cgraph's `inst' relation (*case-role->relation*), so an ins-filled slot would
+;; be parsed and then silently dropped. Revisit together with that mapping.
+;; Modelled on Marcus's `go': cf (nil (pfrom) (pto) agt).
+(df drive feats (mainverb pres tnsless v-3s)
+     cf (neut (pto) agt)
+     markers act)
+
+;; --- nouns ---
+(jlike automobile block)   ; inanimate physobj count noun ("...drive his automobile")
+
+;; --- place names ---
+;; Modelled on Marcus's `chicago': (noun ns n3p propnoun place), markers (place).
+;; The `place' marker is what lets a locative/directional PP fill its case.
+(df baltimore feats (noun ns n3p propnoun place) markers (place))
