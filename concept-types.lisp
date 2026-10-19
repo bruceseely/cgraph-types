@@ -127,7 +127,7 @@
 (:label list :supertypes (collection))
 (:label luggage :supertypes (object))
 (:label lunch :supertypes (meal-food))
-(:label lunch-event :supertypes (meal) :canonical-graph "[LUNCH-EVENT]]→(part)→[EAT]- (agnt)→[PERSON] (obj)→[LUNCH]")
+(:label lunch-event :supertypes (meal) :canonical-graph "[LUNCH-EVENT]→(part)→[EAT]- (agnt)→[PERSON] (obj)→[LUNCH]")
 (:label male :supertypes (attribute))
 (:label man :supertypes (adult) :canonical-graph "[MAN]- (sex)→[MALE] (life-stage)→[ADULTHOOD]")
 (:label manner :supertypes (attribute characteristic))
