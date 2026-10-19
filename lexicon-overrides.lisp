@@ -12,7 +12,7 @@
 ;;;   (:label belief    :lemma "believe") ; the English is not the label
 ;;;
 ;;; Every key REGISTER-LEXICON-ENTRY takes works here; see cgraph
-;;; notes/lexicon-overrides.md for the full list, and (cg::report-lexicon-lint)
+;;; docs/lexicon-overrides.md for the full list, and (cg::report-lexicon-lint)
 ;;; for the checks -- a misspelled key is a lint ERROR, a label no type has is
 ;;; :INFO. Defaults come from the lattice (POS from the supertypes, gender from
 ;;; PERSON subtypes, ...), so a type needs an entry here only when English

@@ -21,7 +21,7 @@ directory — what exists, what relates, and how it is said:
   `(:label … :key value …)` form per entry. Defaults come from the lattice, so a
   type is listed only where English departs from them: `(:label baltimore
   :proper-p t)` is what stops `say` producing "to a baltimore". Loaded by
-  `initialize-types`; see cgraph `notes/lexicon-overrides.md`.
+  `initialize-types`; see cgraph `docs/lexicon-overrides.md`.
 - **`lexicon.dict`** — the PARSIFAL vocabulary that lets the
   [`cg-from-parse`](https://github.com/bruceseely/cg-from-parse) extractor PARSE
   sentences about these types (word features, verb case frames, semantic
