@@ -68,7 +68,7 @@
 (:label drive :supertypes (transport) :canonical-graph "[DRIVE]- (agnt)→[PERSON] (dest)→[PLACE] (inst)→[VEHICLE] (obj)→[PERSON].")
 (:label duration :supertypes (temporal-extent) :canonical-graph "[DURATION]←(dur)←[SITUATION]")
 (:label easy :supertypes (difficulty))
-(:label eat :supertypes (ingest))
+(:label eat :supertypes (ingest) :canonical-graph "[EAT]- (agnt)→[ANIMATE] (inst)→[BODY-PART] (obj)→[FOOD].")
 (:label email :supertypes (communication-medium) :note "The MEDIUM sense -- \"she told him by email\", mass, no article. The message you can forward is EMAIL-MESSAGE. English fuses the two (and the act, \"I emailed her\", which is an INFORM with this type on its (inst)); countability separates them, so the lexicon registers this one :mass-p t.")
 (:label email-message :supertypes (message) :note "One email, the thing sent and kept -- \"he forwarded the email\", \"three emails\". A count noun; the mass sense is the medium EMAIL.")
 (:label emotional-attribute :supertypes (mental-attribute))
