@@ -246,4 +246,4 @@
 (:label color :supertypes (physical-attribute))
 (:label red :supertypes (color))
 (:label sandwich :supertypes (food))
-(:label infancy :supertypes (life-stage))
+(:label infancy :supertypes (life-stage) :canonical-graph "[INFANCY]→(thme)→[PERSON].")
