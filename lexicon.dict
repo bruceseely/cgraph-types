@@ -24,13 +24,17 @@
 ;; cgraph's `inst' relation (*case-role->relation*), so an ins-filled slot would
 ;; be parsed and then silently dropped. Revisit together with that mapping.
 ;; Modelled on Marcus's `go': cf (nil (pfrom) (pto) agt).
+
 (df drive feats (mainverb pres tnsless v-3s)
      cf (neut (pto) agt)
      markers act)
 
+
 ;; --- nouns ---
+
 (jlike automobile block)   ; inanimate physobj count noun ("...drive his automobile")
 (jlike car block)          ; another name for AUTOMOBILE (an alias in concept-types.lisp)
+
 
 ;; --- place names ---
 ;; Modelled on Marcus's `chicago': (noun ns n3p propnoun place), markers (place).
