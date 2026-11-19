@@ -30,6 +30,7 @@
 
 ;; --- nouns ---
 (jlike automobile block)   ; inanimate physobj count noun ("...drive his automobile")
+(jlike car block)          ; another name for AUTOMOBILE (an alias in concept-types.lisp)
 
 ;; --- place names ---
 ;; Modelled on Marcus's `chicago': (noun ns n3p propnoun place), markers (place).
