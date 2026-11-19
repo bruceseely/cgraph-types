@@ -15,7 +15,7 @@
 (:label ask :supertypes (communicate))
 (:label attend :supertypes (act))
 (:label attribute :supertypes (quality) :canonical-graph "[ATTRIBUTE]←(attr)←[ENTITY].")
-(:label automobile :supertypes (vehicle))
+(:label automobile :supertypes (vehicle) :aliases (car))
 (:label baby :supertypes (person) :canonical-graph "[BABY]→(life-stage)→[INFANCY].")
 (:label bag :supertypes (collection))
 (:label ball :supertypes (object))
