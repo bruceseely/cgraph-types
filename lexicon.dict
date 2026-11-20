@@ -49,3 +49,4 @@
 (df baltimore feats (noun ns n3p propnoun city) markers (place))
 (df miami feats (noun ns n3p propnoun city) markers (place))
 (df maryland feats (noun ns n3p propnoun us-state) markers (place))
+(df france feats (noun ns n3p propnoun country) markers (place))
