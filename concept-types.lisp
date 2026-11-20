@@ -246,6 +246,6 @@
 (:label infancy :supertypes (life-stage) :canonical-graph "[INFANCY]→(thme)→[PERSON].")
 (:label us-state :supertypes (place))
 (:label government :supertypes (society))
-(:label state-government :supertypes (government) :canonical-graph "[STATE-GOVERNMENT]←(agnt)←[GOVERN]→(ptnt)→[US-STATE].")
+(:label state-government :supertypes (government) :canonical-graph "[STATE-GOVERNMENT]←(agnt)←[GOVERN]→(ptnt)→[US-STATE]." :note "A particular one is an individual named for its state, [STATE-GOVERNMENT: Maryland], never a type. In a sentence it is `Maryland's government' or `the government of Maryland', which should extract as [STATE-GOVERNMENT]←(agnt)←[GOVERN]→(ptnt)→[US-STATE: Maryland]: a government of a US-STATE is a state government. Not parsed yet: `government' is in no lexicon (lexicon.dict needs it), and the extractor reads `Maryland's government' as plain (poss). Bare `Maryland' meaning its government (`Maryland raised taxes') is metonymy, left for later.")
 (:label national-government :supertypes (government) :canonical-graph "[NATIONAL-GOVERNMENT]←(agnt)←[GOVERN]→(ptnt)→[COUNTRY].")
 (:label country :supertypes (place))
