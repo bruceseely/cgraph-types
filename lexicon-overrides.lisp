@@ -18,10 +18,6 @@
 ;;; PERSON subtypes, ...), so a type needs an entry here only when English
 ;;; departs from what the lattice implies. Most types need none.
 
-;; A city that is one particular city. Without this the generator has only the
-;; type label to go on and says "John will drive his automobile to a baltimore".
-(:label baltimore :proper-p t)
-
 ;;; --- Labels that say more than the English -------------------------------
 ;;; These moved here from cgraph's own lexicon.lisp (2026-11-15): each exists
 ;;; because of how THIS ontology names or places a type, not because of
@@ -45,9 +41,12 @@
 (:label email-message :lemma "email" :synonym-ok t)
 
 ;; English says "state" for both the land and the polity; the split that
-;; matters here is one the ontology makes and the word does not.
+;; matters here is one the ontology makes and the word does not: US-STATE is
+;; the place (Maryland), GEOPOLITICAL-STATE the body that governs one. Both
+;; are qualified because STATE itself is the condition sense, the supertype
+;; of BELIEF, KNOW and the rest.
 (:label geological-landform :lemma "landform")
-(:label geographical-state  :lemma "state")
+(:label us-state            :lemma "state")
 (:label geopolitical-state  :lemma "state")
 
 ;; Marques. The -VEHICLE suffix distinguishes the car from the company that

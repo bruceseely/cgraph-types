@@ -93,7 +93,6 @@
 (:label fuel :supertypes (substance))
 (:label furniture :supertypes (object))
 (:label gas :supertypes (fuel))
-(:label geographical-state :supertypes (geological-landform))
 (:label geological-landform :supertypes (place))
 (:label geopolitical-state :supertypes (society))
 (:label girl :supertypes (child) :canonical-graph "[GIRL]- (sex)→[FEMALE] (life-stage)→[CHILDHOOD]")
@@ -246,3 +245,4 @@
 (:label red :supertypes (color))
 (:label sandwich :supertypes (food))
 (:label infancy :supertypes (life-stage) :canonical-graph "[INFANCY]→(thme)→[PERSON].")
+(:label us-state :supertypes (place))
