@@ -32,6 +32,8 @@
 (:label body-part       :lemma "body part")
 (:label food-item       :lemma "food item")
 (:label city-government :lemma "city government")
+(:label state-government    :lemma "state government")
+(:label national-government :lemma "national government")
 (:label office-building :lemma "office building")
 
 ;; A label qualified to split a polysemous word says more than the English
@@ -40,14 +42,12 @@
 (:label text-message  :lemma "text message")
 (:label email-message :lemma "email" :synonym-ok t)
 
-;; English says "state" for both the land and the polity; the split that
-;; matters here is one the ontology makes and the word does not: US-STATE is
-;; the place (Maryland), GEOPOLITICAL-STATE the body that governs one. Both
-;; are qualified because STATE itself is the condition sense, the supertype
-;; of BELIEF, KNOW and the rest.
+;; US-STATE is the place (Maryland); STATE-GOVERNMENT is the body that
+;; governs one. The label is qualified because STATE itself is the condition
+;; sense, the supertype of BELIEF, KNOW and the rest -- which also says "state",
+;; hence :synonym-ok: the two share a word and nothing else.
 (:label geological-landform :lemma "landform")
-(:label us-state            :lemma "state")
-(:label geopolitical-state  :lemma "state")
+(:label us-state            :lemma "state" :synonym-ok t)
 
 ;; Marques. The -VEHICLE suffix distinguishes the car from the company that
 ;; makes it, a distinction English drops entirely -- you say "a Chevy". Not
