@@ -34,12 +34,13 @@
 
 
 ;; --- nouns ---
-
 (jlike automobile block)   ; inanimate physobj count noun ("...drive his automobile")
 (jlike car block)          ; another name for AUTOMOBILE (an alias in concept-types.lisp)
+(jlike greg mitch)
 
 
 ;; --- place names ---
 ;; Modelled on Marcus's `chicago': (noun ns n3p propnoun place), markers (place).
 ;; The `place' marker is what lets a locative/directional PP fill its case.
 (df baltimore feats (noun ns n3p propnoun place) markers (place))
+(df miami feats (noun ns n3p propnoun place) markers (place))

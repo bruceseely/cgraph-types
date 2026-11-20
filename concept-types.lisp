@@ -43,7 +43,6 @@
 (:label chevy-vehicle :supertypes (automobile))
 (:label child :supertypes (person) :canonical-graph "[CHILD]→(life-stage)→[CHILDHOOD]")
 (:label childhood :supertypes (life-stage) :canonical-graph "[CHILDHOOD]→(thme)→[PERSON]")
-(:label baltimore :supertypes (city))
 (:label city :supertypes (place))
 (:label city-government :supertypes (society)  :canonical-graph "[CITY-GOVERNMENT]←(agnt)←[GOVERN]→(ptnt)→[CITY]")
 (:label clothing :supertypes (object))
