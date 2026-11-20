@@ -41,6 +41,10 @@
 
 ;; --- place names ---
 ;; Modelled on Marcus's `chicago': (noun ns n3p propnoun place), markers (place).
-;; The `place' marker is what lets a locative/directional PP fill its case.
-(df baltimore feats (noun ns n3p propnoun place) markers (place))
-(df miami feats (noun ns n3p propnoun place) markers (place))
+;; The `place' marker is what lets a locative/directional PP fill its case, and
+;; it is what makes the name a place: "to Boston" is (dest)->[PLACE: Boston].
+;; A feature that names a kind of PLACE in concept-types.lisp says what kind:
+;; `city' below makes [CITY: Baltimore]. (Person names work the same way, from
+;; PERSON: a `woman' feature on a name gives [WOMAN: Sue].)
+(df baltimore feats (noun ns n3p propnoun city) markers (place))
+(df miami feats (noun ns n3p propnoun city) markers (place))
