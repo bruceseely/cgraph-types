@@ -16,20 +16,27 @@
 ;;;                    frame (a verb) or its own feature set (a proper noun).
 
 ;; --- verbs ---
-;; NOTE: this domain's concept-types.lisp gives DRIVE the canonical graph
+;; DRIVE's canonical graph in concept-types.lisp is
 ;;   [DRIVE]- (agnt)→[PERSON] (dest)→[PLACE] (inst)→[VEHICLE] (obj)→[PERSON]
-;; i.e. the vehicle is the INSTRUMENT and `obj' is a person being driven. The
-;; frame below is the simpler transitive reading -- the automobile fills `neut'
-;; and extracts as (obj) -- because Marcus's `ins' case is not yet mapped to
-;; cgraph's `inst' relation (*case-role->relation*), so an ins-filled slot would
-;; be parsed and then silently dropped. Revisit together with that mapping.
-;; Modelled on Marcus's `go': cf (nil (pfrom) (pto) agt) -- the origin (pfrom,
-;; "from Baltimore") extracts as (src), the destination (pto, "to Boston") as
-;; (dest). Without pfrom here, "from Baltimore to Boston" fitted no frame and
-;; both places were lost.
+;; -- the vehicle is the INSTRUMENT, `obj' the person driven. The frame gets
+;; both from the one direct-object position:
+;;   (*obj ins)    the object may fill `ins' as well as the first open case,
+;;                 `neut' -- Marcus's mechanism for give's (*obj dat)
+;;   neut (# hanim #)  ...and the markers choose: drive's `neut' takes only
+;;                 humans, `ins' (its markerset) only the inanimate. So
+;;                 "drove Sue" is (obj)→[PERSON: Sue], "drove a car"
+;;                 (inst)→[CAR].
+;;   (neut) (ins)  both optional, or whichever the object did not fill is an
+;;                 obligatory slot left empty -- "drove Sue" lost Sue outright.
+;; cg-from-parse maps `ins' to `inst' and `neut' to `obj'.
+;; Modelled on Marcus's `go' for the rest: cf (nil (pfrom) (pto) agt) -- the
+;; origin (pfrom, "from Baltimore") extracts as (src), the destination (pto,
+;; "to Boston") as (dest). Without pfrom here, "from Baltimore to Boston"
+;; fitted no frame and both places were lost.
 
 (df drive feats (mainverb pres tnsless v-3s)
-     cf (neut (pfrom) (pto) agt)
+     cf ((*obj ins) (neut) (ins) (pfrom) (pto) agt)
+     neut (# hanim #)
      markers act)
 (df drove  irreg (drive (past vspl) (tnsless v-3s pres)))
 (df driven irreg (drive (en) (tnsless v-3s pres)))
