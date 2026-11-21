@@ -31,6 +31,9 @@
 (df drive feats (mainverb pres tnsless v-3s)
      cf (neut (pfrom) (pto) agt)
      markers act)
+(df drove  irreg (drive (past vspl) (tnsless v-3s pres)))
+(df driven irreg (drive (en) (tnsless v-3s pres)))
+
 
 
 ;; --- nouns ---
